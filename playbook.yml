@@ -1,0 +1,19 @@
+# Here is where you run the ansible playbook from. This will setup and download the necessary dependancies that are needed for the minecraft server (docker, docker engine, docker-copmose, etc) 
+---
+- name: Download and setup Docker and anyother depandencies that might be needed for the minecraft server to run smoothly
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - docker
+
+  tasks:
+  - name: sends out msg about if deployment of docker was successful or not
+    ansible.builtin.debug:
+      msg: "Docker and dependencies were successfully installed and are running!"
+
+# Check playbook syntax:
+# ansible-playbook -i inventory.ini --syntax-check playbook.yml
+
+# How to run the playbook:
+# ansible-playbook -i inventory.ini playbook.yml
