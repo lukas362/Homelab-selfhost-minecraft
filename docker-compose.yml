@@ -1,0 +1,68 @@
+services:
+  mc:
+    image: itzg/minecraft-server:java21
+    container_name: minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"     # Public Game Port
+      - "25575:25575"     # RCON Port for Bot
+    environment:
+      EULA: "TRUE"
+      TYPE: "NEOFORGE"
+      VERSION: "1.21.1"
+      NEOFORGE_VERSION: "21.1.229"
+      MEMORY: "16384M"
+      
+      # Modern Java 21 Flags
+      USE_MEOWICE_FLAGS: "true"
+      TZ: "Europe/Stockholm"
+      
+      # Server Rules & Details
+      MAX_PLAYERS: "15"
+      MOTD: "Minecraft server for friends!"
+      DIFFICULTY: "hard"
+      SIMULATION_DISTANCE: "6"
+      LEVEL: "Playing with friends"
+      MAX_WORLD_SIZE: "100000"
+      LOG_IPS: "true"
+      LOG_TERMINAL_FORMAT: "[%d{HH:mm:ss} %level]: %msg%n"
+      
+      # Security & Access
+      ENABLE_WHITELIST: "true"
+      WHITELIST: |-
+        #
+      OPS: |-
+        #
+        
+        
+      # Secure RCON Link
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "${MC_RCON_PASSWORD}" # Taken from .env file
+      RCON_PORT: "25575"
+
+      # Automation feature on the server
+      RCON_CMDS_STARTUP: "pregen start 1500"
+      RCON_CMDS_FIRST_CONNECT: "pregen stop\nsay Server is now up and active"
+      RCON_CMDS_LAST_DISCONNECT: "say Server will stop in 5 minutes due to no players online."
+      PAUSE_WHEN_EMPTY_SECONDS: "600"
+      PLAYER_IDLE_TIMEOUT: "720"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
+    volumes:
+      - "./data:/data"
+
+# playit.gg (how people connect to the server, so you can play together)
+
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:0.17
+    network_mode: host
+    environment:
+      - SECRET_KEY=${PLAYIT_SECRET_TOKEN}
+
+# Useful commands for starting, restarting, stopping and checking server 
+
+# docker compose up -d
+# docker compose ps
+# docker compose logs -f playit
+# docker compose restart
+# docker compose stop
