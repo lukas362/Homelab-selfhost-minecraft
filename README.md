@@ -1,6 +1,8 @@
 # Selfhost-Minecraft
 This is a overview on how I selfhosted my own minecraft server on my ubuntu server and manage to make it accessible to friends. I used [`itzg/minecraft-server`](https://github.com/itzg/docker-minecraft-server) image and made a tunnel via [playit.gg](https://playit.gg) so that anyone could connect without the need for port fowarding.
 
+<img width="1920" height="1080" alt="2026-05-23_20 11 16(1)" src="https://github.com/user-attachments/assets/d5644e57-6415-4d05-9440-90fd83e0a510" />
+
 ## Features
 - **Ansible** Downloads docker and sets it up automatically
 - **Docker-compose** where the configs for the server are located
