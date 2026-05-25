@@ -61,3 +61,5 @@ docker compose up -d
 |---|---|
 | `25565` | Minecraft |
 | `25575` | RCON |
+
+Feel free to fork and adapt this for your own server needs.
