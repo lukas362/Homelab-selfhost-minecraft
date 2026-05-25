@@ -15,7 +15,7 @@ cd you
 Run the playbook to install Docker on your server:
  
 ```bash
-ansible-playbook ansible/playbook.yml -i ansible/inventory.yml
+ansible-playbook -i inventory.ini playbook.yml
 ```
 
 ### 3. Create your `.env` file
