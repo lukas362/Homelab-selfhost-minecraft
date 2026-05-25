@@ -9,26 +9,26 @@ services:
       - "25575:25575"     # RCON Port for Bot
     environment:
       EULA: "TRUE"
-      TYPE: "NEOFORGE"
-      VERSION: "1.21.1"
-      NEOFORGE_VERSION: "21.1.229"
-      MEMORY: "16384M"
+      TYPE: "REPLACE"  # What minecraft loader you are using
+      VERSION: "REPLACE"  # Version you playing on
+      NEOFORGE_VERSION: "REPLACE"  # Version you playing on
+      MEMORY: "REPLACE"  # This is where you set how much ram should be dedicated to the minecraft server
       
       # Modern Java 21 Flags
       USE_MEOWICE_FLAGS: "true"
-      TZ: "Europe/Stockholm"
+      TZ: "REPLACE"  # What time soon you are in
       
       # Server Rules & Details
-      MAX_PLAYERS: "15"
+      MAX_PLAYERS: "REPLACE"  # How many people that can join the server
       MOTD: "Minecraft server for friends!"
       DIFFICULTY: "hard"
       SIMULATION_DISTANCE: "6"
       LEVEL: "Playing with friends"
-      MAX_WORLD_SIZE: "100000"
+      MAX_WORLD_SIZE: "100000"  # World size
       LOG_IPS: "true"
       LOG_TERMINAL_FORMAT: "[%d{HH:mm:ss} %level]: %msg%n"
       
-      # Security & Access
+      # Security & Access (this is where you set who can join and admin powers)
       ENABLE_WHITELIST: "true"
       WHITELIST: |-
         #
@@ -42,11 +42,11 @@ services:
       RCON_PORT: "25575"
 
       # Automation feature on the server
-      RCON_CMDS_STARTUP: "pregen start 1500"
+      RCON_CMDS_STARTUP: "pregen start 1500"  # Pre load the server
       RCON_CMDS_FIRST_CONNECT: "pregen stop\nsay Server is now up and active"
       RCON_CMDS_LAST_DISCONNECT: "say Server will stop in 5 minutes due to no players online."
-      PAUSE_WHEN_EMPTY_SECONDS: "600"
-      PLAYER_IDLE_TIMEOUT: "720"
+      PAUSE_WHEN_EMPTY_SECONDS: "600"  # Server will pause after 600 sec
+      PLAYER_IDLE_TIMEOUT: "720"  # Kick afk player after being on for 720 min
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
     volumes:
       - "./data:/data"
