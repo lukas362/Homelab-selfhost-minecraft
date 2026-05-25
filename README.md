@@ -21,7 +21,7 @@ ansible-playbook -i inventory.ini playbook.yml
 ### 3. Create your `.env` file
  
 ```bash
-cp .env.example .env
+.env
 ```
  
 Then fill in your secrets:
@@ -52,5 +52,5 @@ docker compose up -d
 ## Ports that are being used
 | Port | Purpose |
 |---|---|
-| `25565` | Minecraft game traffic |
+| `25565` | Minecraft |
 | `25575` | RCON |
