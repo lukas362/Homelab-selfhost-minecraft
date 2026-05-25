@@ -21,10 +21,10 @@ services:
       # Server Rules & Details
       MAX_PLAYERS: "REPLACE"  # How many people that can join the server
       MOTD: "Minecraft server for friends!"
-      DIFFICULTY: "hard"
+      DIFFICULTY: "REPLACE"  # Difficulty
       SIMULATION_DISTANCE: "6"
       LEVEL: "Playing with friends"
-      MAX_WORLD_SIZE: "100000"  # World size
+      MAX_WORLD_SIZE: "REPLACE"  # World size
       LOG_IPS: "true"
       LOG_TERMINAL_FORMAT: "[%d{HH:mm:ss} %level]: %msg%n"
       
