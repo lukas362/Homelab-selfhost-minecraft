@@ -14,8 +14,7 @@ This is a overview on how I selfhosted my own minecraft server on my ubuntu serv
 ### 1. Clone the repo
  
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd you
+https://github.com/lukas362/selfhost-minecraft.git
 ```
 ### 2. Run Ansible to get the dependancies you need
  
