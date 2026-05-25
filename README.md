@@ -1,4 +1,4 @@
-# Selfhost-minecraft on you're own server
+# Selfhost-Minecraft
 This is a overview on how I selfhosted my own minecraft server on my ubuntu server and manage to make it accessible to friends. I used [`itzg/minecraft-server`](https://github.com/itzg/docker-minecraft-server) image and made a tunnel via [playit.gg](https://playit.gg) so that anyone could connect without the need for port fowarding.
 
 ## Features
