@@ -4,11 +4,11 @@ This is a overview on how I selfhosted my own minecraft server on my own ubuntu 
 <img width="1920" height="1080" alt="2026-05-23_20 11 16(1)" src="https://github.com/user-attachments/assets/d5644e57-6415-4d05-9440-90fd83e0a510" />
 
 ## Features
-- **Ansible** Downloads docker and sets it up automatically
-- **Docker-compose** where the configs for the server are located
-- **playit.gg tunnel** makes it so you can play with friends on the same server without having to expose home router with port forwarding
-- **RCON** enabled for bot/automation integrations
-- **Auto-pause** pause server when no players are online for a certain amount of time (saves resources)
+- **Ansible**: Downloads docker and sets it up automatically
+- **Docker-compose**: Where the configs for the server are located
+- **playit.gg tunnel**: Makes it so you can play with friends on the same server without having to expose home router with port forwarding
+- **RCON**: Enabled for bot/automation integrations
+- **Auto-pause**: Pause server when no players are online for a certain amount of time (saves resources)
 
 ### What you need before you start
 - A [playit.gg](https://playit.gg) account and agent secret key (this will go into the .env file later for saftey)
